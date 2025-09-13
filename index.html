@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Employee Clock Form (Protected)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: #f5f6fa;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-  }
-  .form-container, .thankyou-box, .login-box {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 25px 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  }
-  h2, h1 { text-align: center; }
-  fieldset {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  legend {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #444;
-  }
-  label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
-  input[type="text"], input[type="time"], input[type="date"], input[type="password"],
-  select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    font-size: 0.95em;
-    box-sizing: border-box;
-    background-color: #fff;
-    appearance: none;
-  }
-  .form-actions { text-align: center; }
-  .form-actions button {
-    background: #007bff; color: #fff; border: none;
-    border-radius: 6px; padding: 10px 24px;
-    font-size: 1em; cursor: pointer;
-  }
-  .form-actions button:hover { background: #0056b3; }
-  .thankyou-box {
-    display: none; text-align: center; margin-top: 100px;
-  }
-  .thankyou-box h1 { color: #28a745; }
-  .thankyou-box a {
-    display: inline-block; margin-top: 20px;
-    padding: 10px 20px; background: #007bff;
-    color: #fff; border-radius: 6px; text-decoration: none;
-  }
-  .thankyou-box a:hover { background: #0056b3; }
-  .login-box { max-width: 400px; margin-top: 120px; text-align: center; }
-</style>
+  <meta charset="UTF-8">
+  <title>Employee Clock Form (Protected)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .form-container, .thankyou-box, .login-box {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 25px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    h2, h1 { text-align: center; }
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    legend {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #444;
+    }
+    label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+    input[type="text"], input[type="time"], input[type="date"], input[type="password"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95em;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+    .form-actions { text-align: center; }
+    .form-actions button {
+      background: #007bff; color: #fff; border: none;
+      border-radius: 6px; padding: 10px 24px;
+      font-size: 1em; cursor: pointer;
+    }
+    .form-actions button:hover { background: #0056b3; }
+    .thankyou-box {
+      display: none; text-align: center; margin-top: 100px;
+    }
+    .thankyou-box h1 { color: #28a745; }
+    .thankyou-box a {
+      display: inline-block; margin-top: 20px;
+      padding: 10px 20px; background: #007bff;
+      color: #fff; border-radius: 6px; text-decoration: none;
+    }
+    .thankyou-box a:hover { background: #0056b3; }
+    .login-box { max-width: 400px; margin-top: 120px; text-align: center; }
+  </style>
 </head>
 <body>
-
 <!-- Password Login -->
 <div class="login-box" id="login-section">
   <h2>🔒 Enter Password</h2>
@@ -97,33 +95,13 @@
         <option>Yendry</option>
         <option>Chicote</option>
       </select>
-
-      <label for="project_name">Project Name</label>
-      <select id="project_name" name="project_name">
-        <option value="">Select Project</option>
-        <option>Golan</option>
-        <option>Iliat</option>
-        <option>Bucare</option>
-        <option>Jensen Guest House</option>
-        <option>Bolona Pool</option>
-        <option>Iliat Pool</option>
-        <option>Hibiscus</option>
-        <option>Jensen Paver Extension</option>
-        <option>Jensen Misc</option>
-      </select>
     </fieldset>
 
-    <!-- Time Details -->
-    <fieldset>
-      <legend>Time Details</legend>
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" required>
+    <!-- Hidden Date + Time -->
+    <input type="hidden" id="date" name="date">
+    <input type="hidden" id="clock_in" name="clock_in">
 
-      <label for="clock_in">Clock In Time</label>
-      <input type="time" id="clock_in" name="clock_in" required>
-    </fieldset>
-
-    <!-- Hidden Geolocation Fields -->
+    <!-- Geolocation Auto-Fill (hidden) -->
     <input type="hidden" id="latitude" name="latitude">
     <input type="hidden" id="longitude" name="longitude">
     <input type="hidden" id="ip_address" name="ip_address">
@@ -143,27 +121,32 @@
 </div>
 
 <script>
-  // Password
-  const FORM_PASSWORD = "mySecret123";
+  // ===== Password Protection =====
+  const FORM_PASSWORD = "mySecret123"; // change this
   function checkPassword() {
     const entered = document.getElementById("access-password").value;
     if (entered === FORM_PASSWORD) {
       document.getElementById("login-section").style.display = "none";
       document.getElementById("form-section").style.display = "block";
       captureGeolocation();
+      setDateTime();
     } else {
       document.getElementById("error-msg").style.display = "block";
     }
   }
 
-  // Prefill today's date
-  document.addEventListener("DOMContentLoaded", function() {
-    const dateInput = document.getElementById("date");
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.value = today;
-  });
+  // ===== Hidden Date & Time =====
+  function setDateTime() {
+    const now = new Date();
+    // YYYY-MM-DD
+    const today = now.toISOString().split("T")[0];
+    document.getElementById("date").value = today;
+    // HH:MM
+    const time = now.toTimeString().slice(0,5);
+    document.getElementById("clock_in").value = time;
+  }
 
-  // Capture GPS + Address
+  // ===== Capture GPS + Address =====
   function captureGeolocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -190,7 +173,7 @@
       fallbackToIp();
     }
 
-    // Capture IP
+    // Capture IP always
     fetch("https://api64.ipify.org?format=json")
       .then(res => res.json())
       .then(data => {
@@ -199,9 +182,9 @@
       .catch(err => console.error("IP fetch failed:", err));
   }
 
-  // Fallback: IP-based location
+  // ===== IP-based fallback =====
   function fallbackToIp() {
-    fetch("https://ipinfo.io/json")
+    fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE")
       .then(res => res.json())
       .then(data => {
         document.getElementById("ip_address").value = data.ip;
@@ -216,18 +199,18 @@
       .catch(err => console.error("IP fallback failed:", err));
   }
 
-  // Show form again
+  // ===== Show form again =====
   function showForm() {
     document.getElementById("thankyou-section").style.display = "none";
     document.getElementById("form-section").style.display = "block";
     captureGeolocation();
+    setDateTime();
   }
 
-  // Submit handler
+  // ===== Submit handler =====
   document.getElementById("employeeForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    const formEl = this;
-    const formData = Object.fromEntries(new FormData(formEl).entries());
+    const formData = Object.fromEntries(new FormData(this).entries());
     fetch("https://hook.eu1.make.com/4umyy6v8n9t3c8iqikliwufee6n5lifp", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -237,9 +220,8 @@
       if (res.ok) {
         document.getElementById("form-section").style.display = "none";
         document.getElementById("thankyou-section").style.display = "block";
-        formEl.reset();
-        const today = new Date().toISOString().split("T")[0];
-        document.getElementById("date").value = today;
+        this.reset();
+        setDateTime();
       } else {
         alert("Error submitting form.");
       }
